@@ -1,0 +1,255 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First JavaScript</title>
+</head>
+<body>
+    
+    <h2>My First JavaScript Program</h2>
+
+    <button onclick="displayMessage()">
+        Click me
+    </button>
+
+    <p id="demo"></p>
+
+    <script>
+        const displayMessage = () => {
+            document.querySelector('#demo').
+            textContent='Welcome to your first JavaScript program.';
+        }
+    </script>
+</body>
+</html> -->
+
+<script>
+    let name = 'Alice'
+    let greeting = 'Hello, ${name}!'
+    console.log(name, greeting)
+
+    let symbol1 = Symbol('mySymbol')
+    console.log(typeof symbol1)
+
+    let symbol2 = Symbol('mySymbol')
+    console.log(symbol1 === symbol2)
+
+    let person = {
+        // name and age are called property or key
+        // Alice and 30 are called value 
+        name: 'Alice',
+        age: 30
+    }
+    console.log(person)
+
+    let personName = person.name
+    console.log(personName)
+
+    let personAge = person.age
+    console.log(personAge)
+
+    let emptyValue = null
+    console.log(emptyValue)
+
+    let notAssigned
+    console.log(notAssigned)
+
+    let a= 10
+    let b = 6
+
+    let sum = a + b
+    let difference = a - b
+    let product = a * b
+    let quotient = a / b
+    let remainder = a % b
+    console.log(sum, difference, product, quotient, remainder)
+
+    // And => &&
+    // Or => ||
+    // Not => !
+
+    let num1 = 10
+    let num2 = 20
+
+    let isEqual = num1 == num2
+    console.log(isEqual)
+    let isNotEqual = num1 != num2
+    console.log(isNotEqual)
+    let isGreater = num1 > num2
+    console.log(isGreater)
+
+    // == compare values and ignore their type
+    // === compare value and types, which means more strict than ===
+
+    let num = 5
+    let str = '5'
+    console.log(num == str)
+    console.log(num === str)
+
+    let temperature = 25
+
+    if (temperature > 30) {
+        console.log("It's hot outside!")
+    }
+    else {
+        console.log("It's not too hot.")
+    }
+
+    let score = 85
+
+    if (score >= 90) {
+        console.log("You got an A!")
+    }
+    else if (score >= 80) {
+        console.log("You got a B")
+    }
+    else {
+        console.log("You did not pass.")
+    }
+
+    let age = 18
+
+    let canVote = age >= 18 ? "You can vote!": "You cannot vote."
+    console.log(canVote)
+
+    for (let i = 0; i < 5; i++) {
+        console.log(i)
+    }
+
+    // let fruits = ['apple', 'banana', 'orange']
+
+    // for (let fruit of fruits) {
+    //     console.log(fruit)
+    // }
+
+    let obj = {
+        a: 1,
+        b: 2,
+        c: 3
+    }
+
+    for (let key in obj) {
+        console.log(key)
+    }
+    for (let key in obj) {
+        console.log(key)
+    }
+    for (let key in obj) {
+        console.log(key)
+    }
+
+    class Dog {
+        constructor(name, breed) {
+            this.name = name
+            this.breed = breed
+        }
+
+        bark() {
+            console.log(this.name + ' says Woof!Woof!')
+        }
+    }
+
+    const myDog = new Dog("Buddy", "Chocolate Labrador")
+    myDog.bark()
+
+    class ServiceDog extends Dog {
+        constructor(name, breed, job) {
+            super(name, breed)
+            this.job = job
+        }
+
+        performJob() {
+            console.log(this.name + ' is performing his job as a' + this.job + '.')
+        }
+    }
+
+    const myServiceDog = new ServiceDog('Max', 'Golden Retriever', 'guide dog')
+    myServiceDog.bark()
+    myServiceDog.performJob()
+
+    function add(a, b) {
+        return a + b
+    }
+    console.log(add(1, 2))
+
+    const multiply = function(a, b) {
+        return a*b
+    }
+    console.log(multiply(2, 3))
+
+    const subtract = (a, b) => a -b
+    console.log(subtract(1, 2))
+
+    const calculateAreaAndPerimeter = (length, width) => {
+        let area = length * width
+        let perimeter = 2 * (length + width)
+
+        return {area: area, perimeter: perimeter}
+    }
+
+    let rectangle = calculateAreaAndPerimeter(4, 6)
+    console.log("Area: " + rectangle.area)
+    console.log("Perimeter: " + rectangle.perimeter)
+
+    let globalVar = "I'm global"
+
+    // function exampleFunction() {
+    //     console.log(globalVar)
+    // }
+    // exampleFunction()
+
+    const exampleFunction = () => {
+        let functionVar = "I'm local to this function"
+        console.log(functionVar)
+    }
+    // exampleFunction()
+    // console.log(functionVar)
+
+    // if (true) {
+    //     let blockVar = "I'm local to this block"
+    //     console.log(blockVar)
+    // }
+    // console.log(blockVar)
+
+    const outerFunction = () => {
+        let outerVar = "I'm in the outer function"
+
+        const innerFunction = () => {
+            console.log(outerVar)
+        }
+        innerFunction()
+    }
+    outerFunction()
+
+    let fruits = ['apple', 'banana', 'cherry']
+    fruits.push('orange')
+    console.log(fruits)
+
+    fruits.pop()
+    console.log(fruits)
+    delete fruits[0]
+    console.log(fruits)
+    fruits.shift()
+    console.log(fruits)
+    fruits.slice(1)
+    console.log(fruits)
+    console.log(fruits[1])
+
+    let myMap = new Map()
+    myMap.set('name', 'John Doe')
+    myMap.set('age', 30)
+
+    console.log(myMap)
+    console.log(myMap.get('name'))
+    console.log(myMap.get('age'))
+
+    let mySet = new Set()
+    mySet.add(1)
+    mySet.add(2)
+    mySet.add(3)
+    console.log(mySet)
+    mySet.delete(2)
+    console.log(mySet)
+
+</script>
